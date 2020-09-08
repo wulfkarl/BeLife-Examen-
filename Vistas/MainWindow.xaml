@@ -1,0 +1,108 @@
+﻿<Controls:MetroWindow x:Class="Vistas.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vistas"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="536.151">
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="Images/apps-for-business-eraashu001-40063496-1920-650.jpg"/>
+        </Canvas.Background>
+        <StackPanel Panel.ZIndex="2" Style="{StaticResource spSlideLeft}" x:Name="spLeft" Background="#FF2D3246" Width="200" Margin="-150,0,0,0">
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" >
+                <Button x:Name="btn_agregar_cliente" Style="{DynamicResource MetroWindowButtonStyle}" Width="148"  Height="40" VerticalAlignment="Top" Click="btn_agregar_cliente_Click"  >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"><Run Text="Agregar Cliente"/></TextBlock>
+                                <TextBlock><Run Text="Función para Agregar un nuevo Cliente."/></TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <Image Source="Images/menu/mnu_add_clie.png" Height="35" Width="60" RenderTransformOrigin="0.707,0.5" />
+                </Button>
+                <Image Source="Images/Add_User.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
+            </DockPanel>
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" >
+                <Button x:Name="btn_editar_cliente" Style="{DynamicResource MetroWindowButtonStyle}" Width="148"  Height="40" VerticalAlignment="Top" Click="btn_editar_cliente_Click_1" >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"><Run Text="Editar Cliente"/></TextBlock>
+                                <TextBlock><Run Text="Función para Editar información de un Cliente."/></TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <Image Source="Images/menu/mnu_edit_clie.png" Height="35" Width="60" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+                <Image Source="Images/Edit_clie.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
+            </DockPanel>
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" >
+                <Button x:Name="btn_listar_cliente" Style="{DynamicResource MetroWindowButtonStyle}" Width="148"  Height="40" VerticalAlignment="Top" Click="btn_listar_cliente_Click_1"  >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"><Run Text="Listar Cliente"/></TextBlock>
+                                <TextBlock><Run Text="Función para Listar los Clientes agregados."/></TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <Image Source="Images/menu/mnu_list_clie.png" Height="35" Width="60" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+                <Image Source="Images\Listar_clie.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
+            </DockPanel>
+        </StackPanel>
+
+
+        <StackPanel Panel.ZIndex="2" Style="{StaticResource spSlideRight}" x:Name="spRight" Background="#FF2D3246" Width="200" Margin="465,0,0,0">
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" Height="50">
+                <Image Source="Images/Contact_Add-WF.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
+                <Button x:Name="btn_agregar_contrato" Style="{DynamicResource MetroWindowButtonStyle}" Width="90" Height="40" VerticalAlignment="Top" Click="btn_agregar_contrato_Click"  >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"><Run Text="Agregar Contrato"/></TextBlock>
+                                <TextBlock><Run Text="Función para Agregar un nuevo Contrato y Asignarlo a un Cliente previamente Ingresado."/></TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <Image Source="Images/menu/mnu_add_cto.png" Height="35" Width="60" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+            </DockPanel>
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" >
+                <Image Source="Images/Edit_contrato.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
+                <!--<Button x:Name="btn_editar_contrato" Content="Editar Contrato" Click="btn_editar_contrato_Click" />-->
+                <Button x:Name="btn_editar_contrato" Style="{DynamicResource MetroWindowButtonStyle}" Width="90" Height="40" VerticalAlignment="Top" Click="btn_editar_contrato_Click_1"  >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"><Run Text="Editar Contrato"/></TextBlock>
+                                <TextBlock><Run Text="Función para Editar información de un Contrato."/></TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <Image Source="Images/menu/mnu_edit_cto.png" Height="35" Width="60" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+            </DockPanel>
+            <DockPanel VerticalAlignment="Center" HorizontalAlignment="Right" Width="200" >
+                <Image Source="Images/listar_cliente.png" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="14,10,10,10" />
+                <Button x:Name="btn_listar_contrato" Style="{DynamicResource MetroWindowButtonStyle}" Width="90" Height="40" VerticalAlignment="Top" Click="btn_listar_contrato_Click_3"  >
+                    <Button.ToolTip>
+                        <ToolTip>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold"><Run Text="Listar Contrato"/></TextBlock>
+                                <TextBlock><Run Text="Función mostrar los contratos previamente Agregados."/></TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </Button.ToolTip>
+                    <Image Source="Images/menu/mnu_list_cto.png" Height="35" Width="60" RenderTransformOrigin="0.707,0.5" />
+                </Button>
+            </DockPanel>
+        </StackPanel>
+        <Image Height="295" Canvas.Left="55" Canvas.Top="10" Width="405" Source="Images/menu/Logo_BeLife.png"/>
+
+    </Canvas>
+</Controls:MetroWindow>

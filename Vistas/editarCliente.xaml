@@ -1,0 +1,132 @@
+﻿<Controls:MetroWindow
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BeLifeV2"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Name="gPrincipal" x:Class="BeLifeV2.editarCliente"
+          Icon="Images\icono_main.png"
+        mc:Ignorable="d"
+         Title="Modificar Datos Cliente" Height="410" Width="890.4">
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="Images/apps-for-business-eraashu001-40063496-1920-650.jpg"/>
+    </Controls:MetroWindow.Background>
+    <Grid Margin="0,0,4,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="211*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Rut Cliente :" HorizontalAlignment="Left" Margin="38,27,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Nombre Cliente:" HorizontalAlignment="Left" Margin="210,28,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Apellidos Cliente" HorizontalAlignment="Left" Margin="0,27,0,0" VerticalAlignment="Top" Grid.Column="1" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Escriba su Rut" Margin="25,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="txtRutCli" TextChanged="txtRutCli_TextChanged"/>
+        <Label Content="Fecha Nacimiento:" HorizontalAlignment="Left" Margin="38,141,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Escriba sus Nombres" Margin="210,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" x:Name="txtNombCli" IsEnabled="False" TextChanged="txtNombCli_TextChanged"/>
+        <TextBox HorizontalAlignment="Left" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Escriba sus Apellidos" Margin="434,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" x:Name="txtApCli" Width="186" IsEnabled="False" TextChanged="txtApCli_TextChanged" Grid.ColumnSpan="2"/>
+        <DatePicker x:Name="dtpFechaNacCli" HorizontalAlignment="Left" Margin="24,167,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" IsEnabled="False"/>
+
+        <StackPanel Grid.ColumnSpan="2">
+            <Button x:Name="btnListarCli"  HorizontalAlignment="Left" Margin="735,244,0,0" VerticalAlignment="Top" Width="60" Height="38" Click="btnListarCli_Click">
+                <Image Source="/Images/Listar_clie.png" Height="28" Width="35" />
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold"><Run Text="Listar Cliente"/></TextBlock>
+                            <TextBlock><Run Text="Función para Listar los Clientes agregados."/></TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,70,0">
+            <Button x:Name="btnCerrar" HorizontalAlignment="Left" Margin="735,293,0,0" VerticalAlignment="Top" Width="60" Height="38" Click="btnCerrar_Click">
+                <Image Source="/Images/Salir.png" Height="28" Width="35" />
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold"><Run Text="Cerrar"/></TextBlock>
+                            <TextBlock><Run Text="Cierra la ventana actual."/></TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+
+        <Label Content="Sexo:" HorizontalAlignment="Left" Margin="268,144,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Estado Civil:" HorizontalAlignment="Left" Margin="434,141,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Foreground="White"/>
+        <ComboBox x:Name="cbbSexo"  HorizontalAlignment="Left" Controls:TextBoxHelper.Watermark="Seleccione Sexo" Margin="210,167,0,0" VerticalAlignment="Top" Width="165" IsEnabled="False" SelectionChanged="cbbSexo_SelectionChanged"/>
+        <ComboBox x:Name="cbbEC" HorizontalAlignment="Left" Controls:TextBoxHelper.Watermark="Seleccione Estado Civil" Margin="434,166,0,0" VerticalAlignment="Top" Width="186" IsEnabled="False" SelectionChanged="cbbEC_SelectionChanged" Grid.ColumnSpan="2" FontSize= "11"/>
+
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,10,0">
+            <Button x:Name="btnEditarCli"  HorizontalAlignment="Left" Margin="735,141,0,0" VerticalAlignment="Top"  Width="60" Height="38" Click="btnEditarCli_Click" IsEnabled="False" >
+                <Image Source="/Images/Edit_clie.png" Height="28" Width="35" />
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold"><Run Text="Editar Cliente"/></TextBlock>
+                            <TextBlock><Run Text="Al presionar edita la información del Cliente seleccionado."/></TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,10,0">
+            <Button x:Name="btnLimpiarCli" HorizontalAlignment="Left" Margin="735,89,0,0" VerticalAlignment="Top"  Width="60" Height="38" Click="btnLimpiarCli_Click" >
+                <Image Source="/Images/Limpiar.png" Height="28" Width="35" />
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold"><Run Text="Limpiar"/></TextBlock>
+                            <TextBlock><Run Text="Limpiar los datos ingreasdos en esta vista."/></TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.ColumnSpan="2" Margin="0,0,10,0">
+            <Button x:Name="btnBuscarCli"  HorizontalAlignment="Left" Margin="735,28,0,0" VerticalAlignment="Top" Width="60" Click="btnBuscarCli_Click" Height="38" >
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold"><Run Text="Buscar Cliente"/></TextBlock>
+                            <TextBlock><Run Text="Al presionar busca la información del RUT ingresado."/></TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+                <Image Source="/Images/Bus_clie.png" Height="28" Width="35" />
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.ColumnSpan="2">
+            <Button x:Name="btnEliminarCli" HorizontalAlignment="Left" Margin="735,187,34,161" VerticalAlignment="Top" Width="60" Height="38" Click="btnEliminarCli_Click" IsEnabled="False">
+                <Image Source="/Images/delete_clie.png" Height="28" Width="35" />
+                <Button.ToolTip>
+                    <ToolTip>
+                        <StackPanel>
+                            <TextBlock FontWeight="Bold"><Run Text="Eliminar Cliente"/></TextBlock>
+                            <TextBlock><Run Text="Al presionar elimina la información del Cliente seleccionado."/></TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+
+        </StackPanel>
+
+        <StatusBar x:Name="McSBar" Height="30" VerticalAlignment="Bottom"  
+                Background="LightBlue" Grid.ColumnSpan="2" >
+            <System:String>Módulo Mantención de Clientes</System:String>
+        </StatusBar>
+        <Rectangle Fill="#FFB295E8" HorizontalAlignment="Left" Height="67" Margin="37,258,0,0" VerticalAlignment="Top" Width="86"/>
+        <Button x:Name="btnContraste" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47" Height="39" Click="BtnContraste_Click" Foreground="Black" BorderBrush="Black" Margin="56,268,0,0">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/filtrar.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Alto contraste" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Margin="37,299,0,0" Background="#FFB295E8" Width="86"/>
+
+
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,91 @@
+﻿<Controls:MetroWindow
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vistas"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Vistas.addContrato"
+        mc:Ignorable="d"
+        Title="Seguros BeLife - Ingresar Contrato" Height="791.875" Width="725.24">
+    <Grid x:Name="gPrincipal">
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/apps-for-business-eraashu001-40063496-1920-650.jpg"/>
+        </Grid.Background>
+        <Canvas HorizontalAlignment="Left" Height="141" Margin="10,10,0,0" VerticalAlignment="Top" Width="699">
+            <Canvas.Background>
+                <SolidColorBrush Color="Gainsboro" Opacity="0.85"/>
+            </Canvas.Background>
+            <Label x:Name="label3_Copy" Content="Rut Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Canvas.Left="47" Canvas.Top="22"/>
+            <TextBox x:Name="txtRutCont" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Escriba su Rut" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Canvas.Left="188" Canvas.Top="23" LostFocus="buscarCli" />
+            <Label Content="Nombre Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="348" Canvas.Top="22"/>
+            <TextBox x:Name="txtNombreCliCon" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Nombre Cliente" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Canvas.Left="472" Canvas.Top="19"/>
+            <Label Content="Tipo Contrato :" Height="26" Canvas.Left="184" Canvas.Top="74" Width="90"/>
+            <ComboBox x:Name="cbbTipoCont" Height="26" Canvas.Left="322" Canvas.Top="80" Width="120" SelectionChanged="cbbTipoCont_SelectionChanged"/>
+            <Button x:Name="btnContraste" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="47" Height="39" Click="BtnContraste_Click" Canvas.Left="632" Canvas.Top="-4" Foreground="Black" BorderBrush="Black">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/filtrar.png"/>
+                </Button.Background>
+            </Button>
+            <Label Content="Alto contraste" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Black" Canvas.Left="614" Canvas.Top="27"/>
+        </Canvas>
+        <Canvas x:Name="cnvAuto" HorizontalAlignment="Left" Height="191" Margin="10,156,0,0" VerticalAlignment="Top" Width="699">
+            <Canvas.Background>
+                <SolidColorBrush Color="Pink" Opacity="0.85"/>
+            </Canvas.Background>
+            <Label Content="Patente:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="63" Canvas.Top="42"/>
+            <TextBox x:Name="txtPatente" HorizontalAlignment="Left" Height="23" Margin="114,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Marca:" HorizontalAlignment="Left" Margin="42,91,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbbMarca" HorizontalAlignment="Left" Margin="114,91,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbbMarca_SelectionChanged"/>
+            <Label Content="Año:" HorizontalAlignment="Left" Margin="373,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,0.383"/>
+            <TextBox x:Name="txtAnioVe" HorizontalAlignment="Left" Height="23" Margin="479,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Text="0" KeyDown="txtAnioVe_KeyDown" />
+            <Label Content="Modelo: " HorizontalAlignment="Left" Margin="373,91,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbbModelo" HorizontalAlignment="Left" Margin="479,90,0,0" VerticalAlignment="Top" Width="120"/>
+
+        </Canvas>
+        <Canvas x:Name="cnvHogar" HorizontalAlignment="Left" Height="233" Margin="10,189,0,0" VerticalAlignment="Top" Width="699">
+            <Canvas.Background>
+                <SolidColorBrush Color="Gold" Opacity="0.85"/>
+            </Canvas.Background>
+            <Label Content="Codigo postal:" HorizontalAlignment="Left" Margin="30,25,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtCodigoPost" HorizontalAlignment="Left" Height="23" Margin="140,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="txtCodigoPost_KeyDown"/>
+            <Label Content="Año" HorizontalAlignment="Left" Margin="332,25,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtAnioVi" HorizontalAlignment="Left" Height="23" Margin="461,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="0" KeyDown="txtAnioVi_KeyDown"/>
+            <Label Content="Dirección :" HorizontalAlignment="Left" Margin="30,75,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtDirec" HorizontalAlignment="Left" Height="23" Margin="140,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Valor Inmueble" HorizontalAlignment="Left" Margin="332,77,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtValorIn" HorizontalAlignment="Left" Height="23" Margin="461,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="txtValorIn_KeyDown"/>
+            <Label Content="Valor Contenido" HorizontalAlignment="Left" Margin="30,122,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtValorCont" HorizontalAlignment="Left" Height="23" Margin="140,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyDown="txtValorCont_KeyDown"/>
+            <Label Content="Region :" HorizontalAlignment="Left" Margin="30,171,0,0" VerticalAlignment="Top"/>
+            <ComboBox x:Name="cbbRegion" HorizontalAlignment="Left" Margin="140,171,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbbRegion_SelectionChanged"/>
+            <ComboBox x:Name="cbbComuna" HorizontalAlignment="Left" Margin="461,171,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Comuna" HorizontalAlignment="Left" Margin="332,171,0,0" VerticalAlignment="Top"/>
+        </Canvas>
+        <Canvas x:Name="cnvDatos" HorizontalAlignment="Left" Height="291" Margin="10,427,0,0" VerticalAlignment="Top" Width="699">
+            <Canvas.Background>
+                <SolidColorBrush Color="AliceBlue" Opacity="0.85"/>
+            </Canvas.Background>
+            <Label Content="Fecha Inicio Vigencia" Canvas.Left="37" Canvas.Top="10"/>
+            <DatePicker x:Name="dtpFechaInicio" Canvas.Left="182" Canvas.Top="10"/>
+            <Label x:Name="lblSalud" Content="Declaracion de Salud" Canvas.Left="367" Canvas.Top="8" Visibility="Visible"/>
+            <ComboBox x:Name="cbbSalud" Canvas.Left="513" Canvas.Top="7" Width="120" Visibility="Visible"/>
+            <Label x:Name="label10" Content="Plan" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.054,0.45" Canvas.Left="37" Canvas.Top="53"/>
+            <ComboBox x:Name="cbbPlan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Canvas.Left="182" Canvas.Top="50" SelectionChanged="cbbPlan_SelectionChanged"/>
+
+
+            <Label Content="Poliza" HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Canvas.Left="376" Canvas.Top="53"/>
+            <TextBox x:Name="txtPoliza" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Canvas.Left="513" Canvas.Top="52"/>
+            <Label x:Name="label8" Content="Prima Anual" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="37" Canvas.Top="95"/>
+            <TextBox x:Name="txtPrimaAnu" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Canvas.Left="182" Canvas.Top="94"/>
+            <Label x:Name="label9" Content="Prima Mensual" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.057,0.447" Canvas.Left="367" Canvas.Top="95"/>
+            <TextBox x:Name="txtPrimaMen" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False" Canvas.Left="513" Canvas.Top="94"/>
+            <Label Content="Observaciones" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Canvas.Left="37" Canvas.Top="134"/>
+            <TextBox x:Name="txtObsv" HorizontalAlignment="Left" Height="89" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" Canvas.Left="182" Canvas.Top="134"/>
+            <Button x:Name="btnGuardar" Content="Guardar" Canvas.Left="380" Canvas.Top="156" Width="75" Click="btnGuardar_Click"/>
+            <Button x:Name="btnLimpiar" Content="Limpiar" Canvas.Left="513" Canvas.Top="156" Width="75"/>
+
+        </Canvas>
+
+    </Grid>
+</Controls:MetroWindow>
